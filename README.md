@@ -34,10 +34,10 @@ All levels should eventually develop vocabulary, grammar, pronunciation, listeni
 
 ## Current learning experience
 
-- The A1 Beginner and A2 Everyday English levels each open as interactive eight-lesson courses.
+- The A1 Beginner, A2 Everyday English and B1 Intermediate levels each open as interactive eight-lesson courses.
 - Every lesson includes a clear goal, English phrases, Tamil support, a simple grammar note and a practice check.
 - Browser speech reads each lesson's key English phrases aloud.
-- Lesson completion and separate A1/A2 progress are saved on the learner's device.
-- The remaining B1–C2 curriculum will be expanded level by level using the same lesson system.
+- Lesson completion and separate A1/A2/B1 progress are saved on the learner's device.
+- The remaining B2–C2 curriculum will be expanded level by level using the same lesson system.
 
-The site is growing into a complete course. A1 and A2 now provide 16 usable bilingual lessons; B1–C2 currently show the roadmap and are the next curriculum phases.
+The site is growing into a complete course. A1 through B1 now provide 24 usable bilingual lessons; B2–C2 currently show the roadmap and are the next curriculum phases.
