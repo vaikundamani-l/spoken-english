@@ -1,18 +1,44 @@
 # SpeakSpring — English, step by step
 
-A free, mobile-friendly English learning website designed to grow from beginner foundations to confident, fluent communication. Built with plain HTML, CSS and JavaScript; no framework, build step, server, or paid API is required.
+A free, mobile-friendly English learning website designed to grow from beginner foundations to confident, fluent communication. Built with modular HTML, CSS and JavaScript; no framework, build step, server, or paid API is required.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve this folder with any static file server. The site uses browser local storage to remember lesson completion on the current device.
+Serve the repository with any static file server because the application uses native JavaScript modules:
+
+```bash
+npx serve .
+```
+
+Then open the local URL shown in the terminal. The site uses browser local storage to remember lesson completion on the current device.
+
+Run the automated checks with:
+
+```bash
+npm test
+```
 
 ## Publish free with GitHub Pages
 
-1. Create a public GitHub repository, for example `english-learning-website`.
-2. Upload `index.html`, `styles.css`, `app.js`, and `README.md` to the repository root.
-3. In the repository, open **Settings → Pages**.
-4. Choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-5. GitHub Pages will provide the public website URL after deployment finishes.
+The repository includes a GitHub Actions workflow that publishes the static site to GitHub Pages whenever `main` changes.
+
+## Project structure
+
+```text
+spoken-english/
+├── index.html                 # Accessible page structure
+├── src/
+│   ├── app.js                 # Composition root
+│   ├── core/                  # Storage and browser services
+│   ├── data/                  # Level, quiz and course content
+│   │   └── courses/           # One module per CEFR level
+│   └── features/              # Course, quiz, progress and mini lesson
+├── styles/                    # Base and course styles
+├── tests/                     # Content and architecture checks
+└── docs/ARCHITECTURE.md       # Design decisions and extension guide
+```
+
+See [Architecture](docs/ARCHITECTURE.md) for responsibilities and design patterns.
 
 ## Course roadmap
 
@@ -27,7 +53,7 @@ All levels should eventually develop vocabulary, grammar, pronunciation, listeni
 
 ## Free stack
 
-- HTML, CSS and vanilla JavaScript
+- HTML, modular CSS and vanilla JavaScript modules
 - GitHub for source control
 - GitHub Pages for static hosting
 - Browser local storage for on-device learning progress
