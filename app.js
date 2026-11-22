@@ -18,26 +18,44 @@ const a1Lessons = [
   {id:'mini-conversation',title:'First conversation',tamil:'முதல் உரையாடல்',goal:'Use what you learned in one short conversation.',goalTamil:'நீங்கள் கற்றவற்றை ஒரு சிறிய உரையாடலில் பயன்படுத்துங்கள்.',phrases:[['Hello! My name is Mani.','வணக்கம்! என் பெயர் மணி.','Start'],["Hi Mani, I'm Arun.",'ஹாய் மணி, நான் அருண்.','Reply'],['Where are you from?','நீங்கள் எங்கிருந்து வருகிறீர்கள்?','Continue'],["I'm from Tenkasi. Nice to meet you!",'நான் தென்காசியைச் சேர்ந்தவன். சந்தித்ததில் மகிழ்ச்சி!','Finish politely']],note:'A simple conversation needs a greeting, an introduction, one question and a polite ending.',noteTamil:'ஒரு எளிய உரையாடலுக்கு வாழ்த்து, அறிமுகம், ஒரு கேள்வி மற்றும் மரியாதையான முடிவு போதும்.',question:'What is a natural polite ending?',options:['Nice to meet you.','What your name?'],answer:0,feedback:'Correct! “Nice to meet you” is a natural polite ending.'}
 ];
 
+const a2Lessons = [
+  {id:'happening-now',title:'Happening now',tamil:'இப்போது நடப்பவை',goal:'Describe actions happening at this moment.',goalTamil:'இந்த நேரத்தில் நடக்கும் செயல்களை விவரியுங்கள்.',phrases:[["I'm learning English now.",'நான் இப்போது ஆங்கிலம் கற்றுக்கொண்டிருக்கிறேன்.','Action happening now'],['She is cooking dinner.','அவள் இரவு உணவு சமைத்துக்கொண்டிருக்கிறாள்.','She + is + verb-ing'],['They are waiting outside.','அவர்கள் வெளியே காத்திருக்கிறார்கள்.','They + are + verb-ing'],['Are you working today?','நீங்கள் இன்று வேலை செய்கிறீர்களா?','Present continuous question']],note:'Use am/is/are + verb-ing for something happening now or around now.',noteTamil:'இப்போது அல்லது தற்போதைய காலத்தில் நடக்கும் செயலுக்கு am/is/are + verb-ing பயன்படுத்தவும்.',question:'Which action is happening now?',options:['He is talking on the phone.','He talks on the phone every day.'],answer:0,feedback:'Correct! “is talking” shows an action happening now.'},
+  {id:'past-events',title:'Yesterday & the past',tamil:'நேற்று மற்றும் கடந்த காலம்',goal:'Talk about completed actions in the past.',goalTamil:'கடந்த காலத்தில் முடிந்த செயல்களைப் பற்றிப் பேசுங்கள்.',phrases:[['I visited my friend yesterday.','நான் நேற்று என் நண்பரைச் சந்தித்தேன்.','Regular past verb'],['We watched a movie.','நாங்கள் ஒரு திரைப்படம் பார்த்தோம்.','Completed action'],['She went to Chennai.','அவள் சென்னைக்குச் சென்றாள்.','Irregular: go → went'],["I didn't work on Sunday.",'நான் ஞாயிற்றுக்கிழமை வேலை செய்யவில்லை.','Negative past']],note:'Use the past form for completed actions. After “did not / didn’t”, use the base verb.',noteTamil:'முடிந்த செயலுக்கு past form பயன்படுத்தவும். “didn’t”க்குப் பிறகு base verb பயன்படுத்தவும்.',question:'Choose the correct past sentence.',options:['I went to the shop.','I goed to the shop.'],answer:0,feedback:'Correct! The past of “go” is “went”.'},
+  {id:'future-plans',title:'Plans & future',tamil:'திட்டங்கள் மற்றும் எதிர்காலம்',goal:'Explain plans, intentions and quick decisions.',goalTamil:'திட்டங்கள், நோக்கங்கள் மற்றும் உடனடி முடிவுகளைச் சொல்லுங்கள்.',phrases:[["I'm going to study tonight.",'நான் இன்று இரவு படிக்கப் போகிறேன்.','A planned action'],['We are going to travel.','நாங்கள் பயணம் செய்யப் போகிறோம்.','Shared plan'],["I'll help you.",'நான் உங்களுக்கு உதவுகிறேன்.','Quick decision'],['Will you call me later?','பிறகு என்னை அழைப்பீர்களா?','Future question']],note:'Use “going to” for a plan already decided. Use “will” for a quick decision, offer or prediction.',noteTamil:'முன்பே தீர்மானித்த திட்டத்திற்கு “going to”; உடனடி முடிவு அல்லது உதவிக்கு “will” பயன்படுத்தவும்.',question:'You already planned to study tonight. Choose the best sentence.',options:["I'm going to study tonight.","I study yesterday."],answer:0,feedback:'Correct! “going to” fits an existing future plan.'},
+  {id:'shopping',title:'At a shop',tamil:'கடையில்',goal:'Ask for items, quantities and prices politely.',goalTamil:'பொருட்கள், அளவு மற்றும் விலையை மரியாதையாகக் கேளுங்கள்.',phrases:[['How much is this?','இது எவ்வளவு?','Ask the price'],["I'd like a kilo of rice.",'எனக்கு ஒரு கிலோ அரிசி வேண்டும்.','Polite request'],['Do you have any milk?','பால் ஏதாவது இருக்கிறதா?','Ask about availability'],["That's all, thank you.",'அவ்வளவுதான், நன்றி.','Finish the purchase']],note:'Use “How much?” for a price. “I’d like…” is more polite than “I want…”.',noteTamil:'விலை கேட்க “How much?” பயன்படுத்தவும். “I want” விட “I’d like” மரியாதையானது.',question:'Which request is more polite?',options:["I'd like two bottles of water, please.",'Give me two waters.'],answer:0,feedback:'Correct! “I’d like … please” is a polite shop request.'},
+  {id:'directions',title:'Places & directions',tamil:'இடங்கள் மற்றும் வழிகாட்டுதல்',goal:'Ask for and understand simple directions.',goalTamil:'எளிய வழிகளை கேட்டுப் புரிந்துகொள்ளுங்கள்.',phrases:[['Where is the bus stand?','பேருந்து நிலையம் எங்கே?','Ask for a place'],['Go straight ahead.','நேராகச் செல்லுங்கள்.','Give a direction'],['Turn left at the signal.','சிக்னலில் இடதுபுறம் திரும்புங்கள்.','A turning instruction'],["It's next to the bank.",'அது வங்கிக்கு அருகில் உள்ளது.','Describe location']],note:'Use “next to” for beside, “opposite” for across from, and “between” for the middle of two places.',noteTamil:'அருகில் “next to”, எதிரில் “opposite”, இரண்டு இடங்களுக்கு நடுவில் “between” பயன்படுத்தவும்.',question:'The pharmacy is beside the bank. Which phrase fits?',options:["It's next to the bank.","It's under the bank."],answer:0,feedback:'Correct! “next to” means beside.'},
+  {id:'travel',title:'Travel & transport',tamil:'பயணம் மற்றும் போக்குவரத்து',goal:'Handle basic bus, train and travel conversations.',goalTamil:'பேருந்து, ரயில் மற்றும் பயண உரையாடல்களைச் சமாளியுங்கள்.',phrases:[['What time does the train leave?','ரயில் எத்தனை மணிக்குப் புறப்படும்?','Ask departure time'],['One ticket to Chennai, please.','சென்னைக்கு ஒரு டிக்கெட் தரவும்.','Buy a ticket'],['Which platform is it?','அது எந்த நடைமேடை?','Find the platform'],['How long does it take?','எவ்வளவு நேரம் ஆகும்?','Ask duration']],note:'Transport timetables use the simple present: “The train leaves at six.”',noteTamil:'போக்குவரத்து அட்டவணைக்கு simple present பயன்படுத்தவும்: “The train leaves at six.”',question:'How do you ask about journey duration?',options:['How long does it take?','How many does it take?'],answer:0,feedback:'Correct! “How long” asks about duration.'},
+  {id:'work-phone',title:'Work & phone calls',tamil:'வேலை மற்றும் தொலைபேசி அழைப்புகள்',goal:'Use clear, polite English at work and on calls.',goalTamil:'வேலை மற்றும் அழைப்புகளில் தெளிவான, மரியாதையான ஆங்கிலத்தைப் பயன்படுத்துங்கள்.',phrases:[['May I speak to Mr Ravi?','திரு. ரவியுடன் பேசலாமா?','Ask for a person'],["He's in a meeting right now.",'அவர் இப்போது கூட்டத்தில் இருக்கிறார்.','Explain availability'],['Could you say that again?','அதை மீண்டும் சொல்ல முடியுமா?','Ask for repetition'],["I'll call back later.",'நான் பிறகு மீண்டும் அழைக்கிறேன்.','End the call']],note:'“Could you…?” and “May I…?” make requests sound polite and professional.',noteTamil:'“Could you…?” மற்றும் “May I…?” வேண்டுகோளை மரியாதையாகவும் professional-ஆகவும் மாற்றும்.',question:'You did not hear clearly. What should you say?',options:['Could you say that again?','You talk again.'],answer:0,feedback:'Correct! This is a clear and polite request for repetition.'},
+  {id:'everyday-challenge',title:'Everyday conversation',tamil:'தினசரி உரையாடல்',goal:'Combine A2 grammar and phrases in a natural conversation.',goalTamil:'A2 grammar மற்றும் phrases-ஐ இயல்பான உரையாடலில் இணைக்கவும்.',phrases:[["What are you doing this weekend?",'இந்த வார இறுதியில் நீங்கள் என்ன செய்கிறீர்கள்?','Ask about a plan'],["I'm going to visit my family.",'நான் என் குடும்பத்தைச் சந்திக்கப் போகிறேன்.','Share a plan'],['How was your trip last week?','கடந்த வாரப் பயணம் எப்படி இருந்தது?','Ask about the past'],['It was great, but the train was late.','அது சிறப்பாக இருந்தது, ஆனால் ரயில் தாமதமானது.','Give detail']],note:'Natural conversation connects present, past and future ideas with short follow-up questions.',noteTamil:'இயல்பான உரையாடல் present, past, future கருத்துகளைச் சிறிய follow-up கேள்விகளால் இணைக்கிறது.',question:'Which question naturally asks about a future plan?',options:['What are you doing this weekend?','What did you do yesterday?'],answer:0,feedback:'Correct! The first question asks about a planned future activity.'}
+];
+
 const levelGrid = document.querySelector('#levelGrid');
 levelGrid.innerHTML = levels.map((item, i) => `<button class="level-card" type="button" aria-label="Open ${item.name} course"><div class="level-meta"><span>${item.level}</span><span class="level-number">0${i+1}</span></div><h3>${item.name}</h3><p>${item.desc}</p><div class="level-topics">${item.topics.map(topic => `<span>${topic}</span>`).join('')}</div><span class="level-arrow" aria-hidden="true">↗</span></button>`).join('');
 
-const COURSE_STORAGE_KEY = 'speakspring-a1-progress-v1';
+const courses = [
+  {key:'a1',levelLabel:'A1 · FOUNDATION',title:'Beginner',summary:'Build the English you need for your first real conversations.',lessons:a1Lessons},
+  {key:'a2',levelLabel:'A2 · ELEMENTARY',title:'Everyday English',summary:'Use practical English for daily life, travel, shopping, work and plans.',lessons:a2Lessons}
+];
+let activeCourseIndex = 0;
 let activeLesson = 0;
 let practiceAnswered = false;
-function readCourseProgress(){try{return JSON.parse(localStorage.getItem(COURSE_STORAGE_KEY)) || {completed:[]};}catch{return {completed:[]};}}
-function writeCourseProgress(progress){localStorage.setItem(COURSE_STORAGE_KEY,JSON.stringify(progress));}
+function activeCourse(){return courses[activeCourseIndex];}
+function courseStorageKey(courseKey){return `speakspring-${courseKey}-progress-v1`;}
+function readCourseProgress(courseKey=activeCourse().key){try{return JSON.parse(localStorage.getItem(courseStorageKey(courseKey))) || {completed:[]};}catch{return {completed:[]};}}
+function writeCourseProgress(progress,courseKey=activeCourse().key){localStorage.setItem(courseStorageKey(courseKey),JSON.stringify(progress));}
 function renderLessonList(){
-  const progress=readCourseProgress();
-  document.querySelector('#lessonList').innerHTML=a1Lessons.map((lesson,i)=>`<button type="button" data-lesson="${i}" class="${i===activeLesson?'active':''} ${progress.completed.includes(lesson.id)?'done':''}"><span class="lesson-list-number">${progress.completed.includes(lesson.id)?'✓':String(i+1).padStart(2,'0')}</span><span class="lesson-list-copy"><b>${lesson.title}</b><small>${lesson.tamil}</small></span><span class="lesson-status">${progress.completed.includes(lesson.id)?'✓':''}</span></button>`).join('');
+  const course=activeCourse(); const progress=readCourseProgress();
+  const lessonList=document.querySelector('#lessonList'); lessonList.setAttribute('aria-label',`${course.levelLabel} lessons`);
+  lessonList.innerHTML=course.lessons.map((lesson,i)=>`<button type="button" data-lesson="${i}" class="${i===activeLesson?'active':''} ${progress.completed.includes(lesson.id)?'done':''}"><span class="lesson-list-number">${progress.completed.includes(lesson.id)?'✓':String(i+1).padStart(2,'0')}</span><span class="lesson-list-copy"><b>${lesson.title}</b><small>${lesson.tamil}</small></span><span class="lesson-status">${progress.completed.includes(lesson.id)?'✓':''}</span></button>`).join('');
   document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListener('click',()=>selectCourseLesson(Number(button.dataset.lesson))));
-  const count=progress.completed.length; const percent=Math.round(count/a1Lessons.length*100);
-  document.querySelector('#courseProgressText').textContent=`${count} of ${a1Lessons.length} lessons`;
+  const count=progress.completed.length; const percent=Math.round(count/course.lessons.length*100);
+  document.querySelector('#courseProgressText').textContent=`${count} of ${course.lessons.length} lessons`;
   document.querySelector('#courseProgressPercent').textContent=`${percent}%`;
   document.querySelector('#courseProgressBar').style.width=`${percent}%`;
 }
 function selectCourseLesson(index){
-  activeLesson=Math.max(0,Math.min(index,a1Lessons.length-1)); practiceAnswered=false;
-  const lesson=a1Lessons[activeLesson]; const progress=readCourseProgress();
+  const course=activeCourse(); activeLesson=Math.max(0,Math.min(index,course.lessons.length-1)); practiceAnswered=false;
+  const lesson=course.lessons[activeLesson]; const progress=readCourseProgress();
   document.querySelector('#playerLessonNumber').textContent=`LESSON ${String(activeLesson+1).padStart(2,'0')}`;
   document.querySelector('#playerTitle').textContent=lesson.title; document.querySelector('#playerTamilTitle').textContent=lesson.tamil;
   document.querySelector('#playerGoal').textContent=lesson.goal; document.querySelector('#playerGoalTamil').textContent=lesson.goalTamil;
@@ -49,21 +67,28 @@ function selectCourseLesson(index){
   document.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>answerCoursePractice(Number(button.dataset.choice))));
   const done=progress.completed.includes(lesson.id); const completeButton=document.querySelector('#completeCourseLesson');
   completeButton.disabled=done; completeButton.innerHTML=done?'Lesson completed <span>✓</span>':'Complete lesson <span>✓</span>';
-  document.querySelector('#nextCourseLesson').innerHTML=activeLesson===a1Lessons.length-1?'Back to first lesson <span>↻</span>':'Next lesson <span>→</span>';
+  document.querySelector('#nextCourseLesson').innerHTML=activeLesson===course.lessons.length-1?'Back to first lesson <span>↻</span>':'Next lesson <span>→</span>';
   renderLessonList();
 }
 function answerCoursePractice(choice){
-  if(practiceAnswered)return; practiceAnswered=true; const lesson=a1Lessons[activeLesson];
+  if(practiceAnswered)return; practiceAnswered=true; const lesson=activeCourse().lessons[activeLesson];
   document.querySelectorAll('[data-choice]').forEach((button,i)=>{if(i===lesson.answer)button.classList.add('correct');});
   if(choice!==lesson.answer)document.querySelector(`[data-choice="${choice}"]`).classList.add('wrong');
   document.querySelector('#checkFeedback').textContent=choice===lesson.answer?lesson.feedback:`Not quite. ${lesson.feedback}`;
 }
-function openA1Course(){document.querySelector('#course').hidden=false;selectCourseLesson(activeLesson);document.querySelector('#course').scrollIntoView({behavior:'smooth',block:'start'});}
-document.querySelectorAll('.level-card').forEach((card,i)=>card.addEventListener('click',()=>{if(i===0){openA1Course();return;}const arrow=card.querySelector('.level-arrow');arrow.textContent='Soon';setTimeout(()=>arrow.textContent='↗',1500);}));
+function openCourse(courseIndex){
+  activeCourseIndex=courseIndex; activeLesson=0; const course=activeCourse();
+  document.querySelector('#courseLevelLabel').textContent=course.levelLabel;
+  document.querySelector('#courseTitle').textContent=course.title;
+  document.querySelector('#courseSummary').textContent=course.summary;
+  document.querySelector('#course').hidden=false; selectCourseLesson(0);
+  document.querySelector('#course').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('.level-card').forEach((card,i)=>card.addEventListener('click',()=>{if(i<courses.length){openCourse(i);return;}const arrow=card.querySelector('.level-arrow');arrow.textContent='Soon';setTimeout(()=>arrow.textContent='↗',1500);}));
 document.querySelector('#courseBack').addEventListener('click',()=>{document.querySelector('#course').hidden=true;document.querySelector('#path').scrollIntoView({behavior:'smooth'});});
-document.querySelector('#completeCourseLesson').addEventListener('click',()=>{const progress=readCourseProgress();const id=a1Lessons[activeLesson].id;if(!progress.completed.includes(id))progress.completed.push(id);writeCourseProgress(progress);selectCourseLesson(activeLesson);updateProgress();});
-document.querySelector('#nextCourseLesson').addEventListener('click',()=>{selectCourseLesson((activeLesson+1)%a1Lessons.length);document.querySelector('#coursePlayer').scrollIntoView({behavior:'smooth',block:'start'});});
-document.querySelector('#speakLesson').addEventListener('click',()=>{if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(a1Lessons[activeLesson].phrases.map(item=>item[0]).join('. '));utterance.lang='en-IN';utterance.rate=.82;const button=document.querySelector('#speakLesson');button.classList.add('speaking');utterance.onend=()=>button.classList.remove('speaking');window.speechSynthesis.speak(utterance);});
+document.querySelector('#completeCourseLesson').addEventListener('click',()=>{const progress=readCourseProgress();const id=activeCourse().lessons[activeLesson].id;if(!progress.completed.includes(id))progress.completed.push(id);writeCourseProgress(progress);selectCourseLesson(activeLesson);updateProgress();});
+document.querySelector('#nextCourseLesson').addEventListener('click',()=>{selectCourseLesson((activeLesson+1)%activeCourse().lessons.length);document.querySelector('#coursePlayer').scrollIntoView({behavior:'smooth',block:'start'});});
+document.querySelector('#speakLesson').addEventListener('click',()=>{if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(activeCourse().lessons[activeLesson].phrases.map(item=>item[0]).join('. '));utterance.lang='en-IN';utterance.rate=.82;const button=document.querySelector('#speakLesson');button.classList.add('speaking');utterance.onend=()=>button.classList.remove('speaking');window.speechSynthesis.speak(utterance);});
 
 const quiz = [
   {question:'Which sentence is correct?', options:['She go to work every day.','She goes to work every day.','She going to work every day.'], answer:1, explanation:'With “he”, “she” or “it” in the simple present, the verb usually takes -s: she goes.'},
@@ -102,12 +127,15 @@ const STORAGE_KEY = 'speakspring-progress-v1';
 function readProgress(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {lessonDone:false};}catch{return {lessonDone:false};}}
 function updateProgress(){
   const progress = readProgress();
-  const courseCount=readCourseProgress().completed.length;
-  const percent = Math.min(100,(progress.lessonDone ? 8 : 0)+Math.round(courseCount/a1Lessons.length*17));
+  const a1Count=readCourseProgress('a1').completed.length;
+  const a2Count=readCourseProgress('a2').completed.length;
+  const courseCount=a1Count+a2Count;
+  const totalLessons=a1Lessons.length+a2Lessons.length;
+  const percent = Math.min(100,(progress.lessonDone ? 8 : 0)+Math.round(courseCount/totalLessons*34));
   document.querySelector('#progressPercent').textContent = `${percent}%`;
   document.querySelector('#progressRing').style.background = `conic-gradient(#6552d8 ${percent*3.6}deg,#e4e1f7 ${percent*3.6}deg)`;
   document.querySelector('#progressTitle').textContent = percent ? 'Great start — keep going!' : 'Your journey starts here';
-  document.querySelector('#progressText').textContent = courseCount ? `${courseCount} A1 lesson${courseCount===1?'':'s'} completed.` : (progress.lessonDone ? 'Your first mini lesson is complete.' : 'Complete your first lesson to begin.');
+  document.querySelector('#progressText').textContent = courseCount ? `${courseCount} A1–A2 lesson${courseCount===1?'':'s'} completed.` : (progress.lessonDone ? 'Your first mini lesson is complete.' : 'Complete your first lesson to begin.');
   document.querySelector('#lessonDone').textContent = progress.lessonDone ? 'Lesson completed ✓' : 'Mark lesson complete ✓';
   document.querySelector('#lessonDone').disabled = progress.lessonDone;
   document.querySelector('#lessonDone').style.opacity = progress.lessonDone ? '.8' : '1';
