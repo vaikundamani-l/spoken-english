@@ -32,4 +32,12 @@ All levels should eventually develop vocabulary, grammar, pronunciation, listeni
 - GitHub Pages for static hosting
 - Browser local storage for on-device learning progress
 
-The initial version is a learning-site foundation, not yet a complete textbook: the course map is present, while lesson content and practice activities can be expanded level by level.
+## Current learning experience
+
+- The A1 Beginner level opens as an interactive eight-lesson course.
+- Every A1 lesson includes a clear goal, English phrases, Tamil support, a simple grammar note and a practice check.
+- Browser speech reads each lesson's key English phrases aloud.
+- Lesson completion and A1 progress are saved on the learner's device.
+- The remaining A2–C2 curriculum will be expanded level by level using the same lesson system.
+
+The site is growing into a complete course. A1 now has a usable first learning path; A2–C2 currently show the full roadmap and are the next curriculum phases.
