@@ -13,7 +13,9 @@ test('every page has unique element ids and valid local module entry points', as
 
     const moduleSources = [...html.matchAll(/<script[^>]+type="module"[^>]+src="([^"]+)"/g)].map(match => match[1]);
     assert.equal(moduleSources.length, 1, `${pageName} module entry`);
-    await access(new URL(`../${moduleSources[0]}`, import.meta.url));
+    assert.match(moduleSources[0], /\?v=\d+$/, `${pageName} cache version`);
+    const modulePath = moduleSources[0].split('?')[0];
+    await access(new URL(`../${modulePath}`, import.meta.url));
   }
 });
 
