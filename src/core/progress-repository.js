@@ -1,4 +1,6 @@
 const MINI_LESSON_KEY = 'speakspring-progress-v1';
+const GRAMMAR_KEY = 'speakspring-grammar-progress-v1';
+const SPEAKING_KEY = 'speakspring-speaking-progress-v1';
 
 export class ProgressRepository {
   constructor(storage) {
@@ -34,5 +36,34 @@ export class ProgressRepository {
 
   completeMiniLesson() {
     this.storage.setItem(MINI_LESSON_KEY, JSON.stringify({ lessonDone: true }));
+  }
+
+  getGrammar() {
+    return this.read(GRAMMAR_KEY, { completed: [], lastLesson: null });
+  }
+
+  completeGrammarLesson(lessonId) {
+    const progress = this.getGrammar();
+    if (!progress.completed.includes(lessonId)) progress.completed.push(lessonId);
+    progress.lastLesson = lessonId;
+    this.storage.setItem(GRAMMAR_KEY, JSON.stringify(progress));
+    return progress;
+  }
+
+  rememberGrammarLesson(lessonId) {
+    const progress = this.getGrammar();
+    progress.lastLesson = lessonId;
+    this.storage.setItem(GRAMMAR_KEY, JSON.stringify(progress));
+  }
+
+  getSpeaking() {
+    return this.read(SPEAKING_KEY, { completed: [] });
+  }
+
+  completeSpeakingPractice(practiceId) {
+    const progress = this.getSpeaking();
+    if (!progress.completed.includes(practiceId)) progress.completed.push(practiceId);
+    this.storage.setItem(SPEAKING_KEY, JSON.stringify(progress));
+    return progress;
   }
 }

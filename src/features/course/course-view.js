@@ -62,6 +62,6 @@ export class CourseView {
 
   closeCourse() {
     this.courseSection.hidden = true;
-    this.document.querySelector('#path').scrollIntoView({ behavior: 'smooth' });
+    this.document.querySelector('#path, .compact-section')?.scrollIntoView({ behavior: 'smooth' });
   }
 }

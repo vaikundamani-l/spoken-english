@@ -28,12 +28,14 @@ The repository includes a GitHub Actions workflow that publishes the static site
 spoken-english/
 ├── index.html                 # Accessible page structure
 ├── src/
-│   ├── app.js                 # Composition root
+│   ├── app.js                 # Homepage composition root
 │   ├── core/                  # Storage and browser services
 │   ├── data/                  # Level, quiz and course content
 │   │   └── courses/           # One module per CEFR level
-│   └── features/              # Course, quiz, progress and mini lesson
-├── styles/                    # Base and course styles
+│   ├── features/              # Reusable course and quiz features
+│   ├── pages/                 # One composition module per page
+│   └── shared/                # Shared navigation setup
+├── styles/                    # Base, course and page styles
 ├── tests/                     # Content and architecture checks
 └── docs/ARCHITECTURE.md       # Design decisions and extension guide
 ```
@@ -67,3 +69,13 @@ All levels should eventually develop vocabulary, grammar, pronunciation, listeni
 - Overall progress combines all 48 bilingual course lessons.
 
 The site now provides a complete first curriculum pass: 48 usable bilingual lessons across A1, A2, B1, B2, C1 and C2. Future phases can deepen each level with more exercises, listening material and speaking assessments.
+
+## Multi-page learning platform
+
+- `index.html` — course introduction and first mini lesson
+- `courses.html` — all 48 CEFR course lessons
+- `grammar.html` — 24-step grammar curriculum from sentence basics to advanced control
+- `grammar-lesson.html` — focused bilingual grammar lesson player
+- `practice.html` — 24-question grammar practice
+- `speaking.html` — eight guided real-life and professional speaking activities
+- `progress.html` — combined course, grammar and speaking dashboard
