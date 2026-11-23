@@ -1,6 +1,9 @@
 const MINI_LESSON_KEY = 'speakspring-progress-v1';
 const GRAMMAR_KEY = 'speakspring-grammar-progress-v1';
 const SPEAKING_KEY = 'speakspring-speaking-progress-v1';
+const VOCABULARY_KEY = 'speakspring-vocabulary-progress-v1';
+const LISTENING_KEY = 'speakspring-listening-progress-v1';
+const PRONUNCIATION_KEY = 'speakspring-pronunciation-progress-v1';
 
 export class ProgressRepository {
   constructor(storage) {
@@ -64,6 +67,19 @@ export class ProgressRepository {
     const progress = this.getSpeaking();
     if (!progress.completed.includes(practiceId)) progress.completed.push(practiceId);
     this.storage.setItem(SPEAKING_KEY, JSON.stringify(progress));
+    return progress;
+  }
+
+  getVocabulary() { return this.read(VOCABULARY_KEY, { completed: [] }); }
+  completeVocabularyPack(packId) { return this.completeItem(VOCABULARY_KEY, this.getVocabulary(), packId); }
+  getListening() { return this.read(LISTENING_KEY, { completed: [] }); }
+  completeListeningPractice(practiceId) { return this.completeItem(LISTENING_KEY, this.getListening(), practiceId); }
+  getPronunciation() { return this.read(PRONUNCIATION_KEY, { completed: [] }); }
+  completePronunciationPractice(practiceId) { return this.completeItem(PRONUNCIATION_KEY, this.getPronunciation(), practiceId); }
+
+  completeItem(key, progress, itemId) {
+    if (!progress.completed.includes(itemId)) progress.completed.push(itemId);
+    this.storage.setItem(key, JSON.stringify(progress));
     return progress;
   }
 }

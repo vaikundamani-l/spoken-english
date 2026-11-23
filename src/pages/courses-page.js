@@ -1,6 +1,6 @@
 import { levels } from '../data/levels.js';
 import { courses } from '../data/courses/index.js';
-import { ProgressRepository } from '../core/progress-repository.js?v=20261123';
+import { ProgressRepository } from '../core/progress-repository.js?v=20261123-2';
 import { SpeechService } from '../core/speech-service.js';
 import { CourseView } from '../features/course/course-view.js?v=20261123';
 import { CourseController } from '../features/course/course-controller.js';

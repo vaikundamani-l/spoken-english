@@ -4,8 +4,8 @@ import { access, readFile } from 'node:fs/promises';
 
 test('index loads the modular application and stylesheet entry points', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /href="styles\/main\.css\?v=\d+"/);
-  assert.match(html, /type="module" src="src\/app\.js\?v=\d+"/);
+  assert.match(html, /href="styles\/main\.css\?v=[\w-]+"/);
+  assert.match(html, /type="module" src="src\/app\.js\?v=[\w-]+"/);
   assert.doesNotMatch(html, /href="styles\.css"/);
   assert.doesNotMatch(html, /src="app\.js"/);
 });
@@ -26,10 +26,10 @@ test('all architecture entry points exist', async () => {
 });
 
 test('professional learning areas are separate navigable pages', async () => {
-  const pages = ['index.html', 'courses.html', 'grammar.html', 'grammar-lesson.html', 'practice.html', 'speaking.html', 'progress.html'];
+  const pages = ['index.html', 'courses.html', 'grammar.html', 'grammar-lesson.html', 'practice.html', 'speaking.html', 'vocabulary.html', 'listening.html', 'pronunciation.html', 'progress.html'];
   const contents = await Promise.all(pages.map(page => readFile(new URL(`../${page}`, import.meta.url), 'utf8')));
   contents.forEach((html, index) => {
-    assert.match(html, /styles\/main\.css\?v=\d+/, pages[index]);
+    assert.match(html, /styles\/main\.css\?v=[\w-]+/, pages[index]);
     assert.match(html, /<main[\s>]/, pages[index]);
     assert.match(html, /data-nav="grammar"/, pages[index]);
   });
