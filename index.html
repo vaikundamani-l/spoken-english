@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="styles/main.css">
   <script type="module" src="src/app.js"></script>
 </head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="SpeakSpring home"><span class="brand-mark">S</span><span>SpeakSpring<small>ENGLISH, STEP BY STEP</small></span></a>
-    <nav aria-label="Main navigation"><a href="#path">Learning path</a><a href="#practice">Practice</a><a href="#speaking">Speaking</a></nav>
+<body data-page="home">
+  <header class="topbar site-header">
+    <a class="brand" href="index.html" aria-label="SpeakSpring home"><span class="brand-mark">S</span><span>SpeakSpring<small>ENGLISH, STEP BY STEP</small></span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <nav data-site-nav aria-label="Main navigation"><a data-nav="home" href="index.html">Home</a><a data-nav="courses" href="courses.html">Courses</a><a data-nav="grammar" href="grammar.html">Grammar</a><a data-nav="practice" href="practice.html">Practice</a><a data-nav="speaking" href="speaking.html">Speaking</a><a data-nav="progress" href="progress.html">Progress</a></nav>
     <button class="top-cta" id="continueBtn">Continue learning <span>→</span></button>
   </header>
 
@@ -22,7 +23,7 @@
         <div class="eyebrow"><span class="pulse"></span> YOUR ENGLISH JOURNEY STARTS HERE</div>
         <h1>From your first<br>words to <em>fluent.</em></h1>
         <p>Build real English skills one small step at a time. Learn grammar, vocabulary, listening and confident speaking—with Tamil explanations whenever you need them.</p>
-        <div class="hero-actions"><a class="button primary" href="#path">Explore your learning path <span>→</span></a><a class="text-link" href="#lesson">Try a free lesson <span>↗</span></a></div>
+        <div class="hero-actions"><a class="button primary" href="courses.html">Explore your learning path</a><a class="text-link" href="grammar.html">Start grammar from scratch</a></div>
         <div class="hero-note"><div class="avatar-stack"><span>வ</span><span>A</span><span>✓</span></div><span>Clear lessons. Useful practice. Your pace.</span></div>
       </div>
       <div class="hero-art" aria-label="Illustration of a learner growing confident in English">
@@ -82,10 +83,10 @@
     <section class="section skills-section" id="practice">
       <div class="section-heading centered"><div class="eyebrow">PRACTICE THAT ADDS UP</div><h2>English is more than<br><em>grammar rules.</em></h2><p>Build all the skills you need to understand and use English in daily life.</p></div>
       <div class="skills-grid">
-        <article class="skill-card skill-vocab"><div class="skill-icon">Aa</div><span class="skill-tag">WORDS & MEANING</span><h3>Vocabulary</h3><p>Learn useful words, phrases, collocations and idioms—with examples you can actually use.</p><a href="#path">Explore vocabulary <span>↗</span></a><div class="card-decoration">word<br>world</div></article>
-        <article class="skill-card skill-grammar"><div class="skill-icon">⌘</div><span class="skill-tag">MAKE IT CLEAR</span><h3>Grammar</h3><p>Understand sentence structure, tenses, articles, prepositions and the little words that make a big difference.</p><a href="#path">Explore grammar <span>↗</span></a><div class="grammar-dots">●　●<br>　●　●</div></article>
-        <article class="skill-card skill-listen"><div class="skill-icon">◖))</div><span class="skill-tag">HEAR THE DIFFERENCE</span><h3>Listening</h3><p>Train your ear with sounds, natural speech, different accents and real-life conversations.</p><a href="#path">Explore listening <span>↗</span></a><div class="waveform">▂▅▃▇▅▂▆▃▇▂▅</div></article>
-        <article class="skill-card skill-speak" id="speaking"><div class="skill-icon">↗</div><span class="skill-tag">SAY WHAT YOU MEAN</span><h3>Speaking & fluency</h3><p>Practise pronunciation, everyday conversations, storytelling and clear, confident expression.</p><a href="#path">Explore speaking <span>↗</span></a><div class="speech-art">Hello!<span>வணக்கம்!</span></div></article>
+        <article class="skill-card skill-vocab"><div class="skill-icon">Aa</div><span class="skill-tag">STRUCTURED COURSES</span><h3>48 lessons</h3><p>Follow complete A1–C2 courses with bilingual examples, audio and useful communication goals.</p><a href="courses.html">Explore courses</a><div class="card-decoration">word<br>world</div></article>
+        <article class="skill-card skill-grammar"><div class="skill-icon">⌘</div><span class="skill-tag">MAKE IT CLEAR</span><h3>Grammar</h3><p>Start from sentence structure and progress through tenses, clauses and advanced grammar.</p><a href="grammar.html">Learn grammar</a><div class="grammar-dots">●　●<br>　●　●</div></article>
+        <article class="skill-card skill-listen"><div class="skill-icon">✓</div><span class="skill-tag">CHECK YOURSELF</span><h3>Practice</h3><p>Test every grammar skill with focused questions and explanations that help you improve.</p><a href="practice.html">Start practice</a><div class="waveform">A B C ✓</div></article>
+        <article class="skill-card skill-speak" id="speaking"><div class="skill-icon">◖))</div><span class="skill-tag">SAY WHAT YOU MEAN</span><h3>Speaking lab</h3><p>Practise real-life and professional situations with model answers and coaching tips.</p><a href="speaking.html">Practise speaking</a><div class="speech-art">Hello!<span>வணக்கம்!</span></div></article>
       </div>
     </section>
 
@@ -95,6 +96,6 @@
 
     <section class="newsletter"><div><span class="newsletter-icon">✦</span><h2>Make English part of your day.</h2><p>Your progress is saved on this device. Come back whenever you’re ready.</p></div><div class="progress-widget"><div class="progress-ring" id="progressRing"><span id="progressPercent">0%</span></div><div><b id="progressTitle">Your journey starts here</b><small id="progressText">Complete your first lesson to begin.</small></div></div></section>
   </main>
-  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">S</span><span>SpeakSpring<small>ENGLISH, STEP BY STEP</small></span></a><p>Learn clearly. Speak confidently.</p><span>Made for curious learners · <span id="year"></span></span></footer>
+  <footer><a class="brand footer-brand" href="index.html"><span class="brand-mark">S</span><span>SpeakSpring<small>ENGLISH, STEP BY STEP</small></span></a><p>Learn clearly. Speak confidently.</p><span>Made for curious learners · <span id="year" data-year></span></span></footer>
 </body>
 </html>

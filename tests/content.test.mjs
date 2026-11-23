@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { courses, totalCourseLessons } from '../src/data/courses/index.js';
 import { levels } from '../src/data/levels.js';
 import { quiz } from '../src/data/quick-quiz.js';
+import { grammarLessons, grammarModules } from '../src/data/grammar-lessons.js';
+import { speakingPractices } from '../src/data/speaking-practice.js';
 
 const requiredLessonFields = [
   'id', 'title', 'tamil', 'goal', 'goalTamil', 'phrases', 'note',
@@ -37,5 +39,26 @@ test('quick quiz answers point to valid options', () => {
   quiz.forEach(question => {
     assert.ok(question.answer >= 0 && question.answer < question.options.length);
     assert.ok(question.explanation.length > 0);
+  });
+});
+
+test('grammar path contains 24 ordered bilingual lessons', () => {
+  assert.equal(grammarModules.length, 4);
+  assert.equal(grammarLessons.length, 24);
+  assert.equal(new Set(grammarLessons.map(lesson => lesson.id)).size, 24);
+  assert.deepEqual(grammarModules.flatMap(module => module.lessonIds), grammarLessons.map(lesson => lesson.id));
+  grammarLessons.forEach(lesson => {
+    assert.ok(lesson.title && lesson.tamil && lesson.explanation && lesson.explanationTamil);
+    assert.equal(lesson.examples.length, 3, lesson.id);
+    assert.ok(lesson.answer >= 0 && lesson.answer < lesson.options.length, lesson.id);
+  });
+});
+
+test('speaking lab contains complete guided practices', () => {
+  assert.equal(speakingPractices.length, 8);
+  assert.equal(new Set(speakingPractices.map(practice => practice.id)).size, 8);
+  speakingPractices.forEach(practice => {
+    assert.ok(practice.prompt && practice.model && practice.tamil);
+    assert.equal(practice.tips.length, 3, practice.id);
   });
 });

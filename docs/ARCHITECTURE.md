@@ -11,6 +11,8 @@ SpeakSpring is a static, dependency-free web application. It uses native ES modu
 | Core | `src/core/` | Browser-facing services and persistence boundaries |
 | Data | `src/data/` | Immutable curriculum and quiz content |
 | Features | `src/features/` | User interactions grouped by product capability |
+| Page composition | `src/pages/` | Connects data and features for each standalone page |
+| Shared | `src/shared/` | Common navigation and page initialization |
 | Presentation | `styles/` | Existing visual system, separated into base and course styles |
 
 ## Design patterns
@@ -22,6 +24,7 @@ SpeakSpring is a static, dependency-free web application. It uses native ES modu
 - **Dependency Injection:** controllers receive their data, repositories, services and callbacks through constructors.
 - **Feature Modules:** quiz, course, mini-lesson and progress code can change independently.
 - **Data-driven UI:** one reusable course experience renders all CEFR levels from validated curriculum modules.
+- **Multi-page architecture:** each major learning goal has a dedicated URL and small composition module while sharing the same core services and persistence layer.
 
 ## Adding a lesson
 

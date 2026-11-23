@@ -25,6 +25,16 @@ test('all architecture entry points exist', async () => {
   await Promise.all(files.map(file => access(new URL(file, import.meta.url))));
 });
 
+test('professional learning areas are separate navigable pages', async () => {
+  const pages = ['index.html', 'courses.html', 'grammar.html', 'grammar-lesson.html', 'practice.html', 'speaking.html', 'progress.html'];
+  const contents = await Promise.all(pages.map(page => readFile(new URL(`../${page}`, import.meta.url), 'utf8')));
+  contents.forEach((html, index) => {
+    assert.match(html, /styles\/main\.css/, pages[index]);
+    assert.match(html, /<main[\s>]/, pages[index]);
+    assert.match(html, /data-nav="grammar"/, pages[index]);
+  });
+});
+
 test('the current visual system remains unchanged by the refactor', async () => {
   const styles = await Promise.all([
     readFile(new URL('../styles/base.css', import.meta.url), 'utf8'),

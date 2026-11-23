@@ -8,7 +8,9 @@ import { CourseController } from './features/course/course-controller.js';
 import { QuickQuizController } from './features/quiz/quick-quiz-controller.js';
 import { MiniLessonController } from './features/mini-lesson/mini-lesson-controller.js';
 import { renderOverallProgress } from './features/progress/overall-progress.js';
+import { initPage } from './shared/page-init.js';
 
+initPage(document);
 const repository = new ProgressRepository(window.localStorage);
 const speech = new SpeechService(window.speechSynthesis, window.SpeechSynthesisUtterance);
 const refreshProgress = () => renderOverallProgress(document, repository, courses);
