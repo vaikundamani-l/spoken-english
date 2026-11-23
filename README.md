@@ -30,7 +30,7 @@ spoken-english/
 ├── src/
 │   ├── app.js                 # Homepage composition root
 │   ├── core/                  # Storage and browser services
-│   ├── data/                  # Level, quiz and course content
+│   ├── data/                  # Course, grammar and skill content
 │   │   └── courses/           # One module per CEFR level
 │   ├── features/              # Reusable course and quiz features
 │   ├── pages/                 # One composition module per page
@@ -66,7 +66,7 @@ All levels should eventually develop vocabulary, grammar, pronunciation, listeni
 - Every lesson includes a clear goal, English phrases, Tamil support, a simple grammar note and a practice check.
 - Browser speech reads each lesson's key English phrases aloud.
 - Lesson completion and separate progress for every level are saved on the learner's device.
-- Overall progress combines all 48 bilingual course lessons.
+- Overall progress combines 104 course, grammar, speaking, vocabulary, listening and pronunciation activities.
 
 The site now provides a complete first curriculum pass: 48 usable bilingual lessons across A1, A2, B1, B2, C1 and C2. Future phases can deepen each level with more exercises, listening material and speaking assessments.
 
@@ -78,4 +78,7 @@ The site now provides a complete first curriculum pass: 48 usable bilingual less
 - `grammar-lesson.html` — focused bilingual grammar lesson player
 - `practice.html` — 24-question grammar practice
 - `speaking.html` — eight guided real-life and professional speaking activities
-- `progress.html` — combined course, grammar and speaking dashboard
+- `vocabulary.html` — 48 bilingual words and phrases in eight practical packs
+- `listening.html` — eight A1–C1 listening practices with transcripts and checks
+- `pronunciation.html` — eight sound, stress, linking and intonation drills
+- `progress.html` — combined dashboard for all 104 learning activities

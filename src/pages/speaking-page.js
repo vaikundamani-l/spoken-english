@@ -1,5 +1,5 @@
 import { speakingPractices } from '../data/speaking-practice.js';
-import { ProgressRepository } from '../core/progress-repository.js?v=20261123';
+import { ProgressRepository } from '../core/progress-repository.js?v=20261123-2';
 import { SpeechService } from '../core/speech-service.js';
 import { initPage } from '../shared/page-init.js';
 

@@ -1,5 +1,5 @@
 import { grammarLessons, grammarModules } from '../data/grammar-lessons.js';
-import { ProgressRepository } from '../core/progress-repository.js?v=20261123';
+import { ProgressRepository } from '../core/progress-repository.js?v=20261123-2';
 import { initPage } from '../shared/page-init.js';
 
 initPage(document);

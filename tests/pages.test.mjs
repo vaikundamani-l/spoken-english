@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 
-const pageNames = ['index.html', 'courses.html', 'grammar.html', 'grammar-lesson.html', 'practice.html', 'speaking.html', 'progress.html'];
+const pageNames = ['index.html', 'courses.html', 'grammar.html', 'grammar-lesson.html', 'practice.html', 'speaking.html', 'vocabulary.html', 'listening.html', 'pronunciation.html', 'progress.html'];
 
 test('every page has unique element ids and valid local module entry points', async () => {
   for (const pageName of pageNames) {
@@ -13,7 +13,7 @@ test('every page has unique element ids and valid local module entry points', as
 
     const moduleSources = [...html.matchAll(/<script[^>]+type="module"[^>]+src="([^"]+)"/g)].map(match => match[1]);
     assert.equal(moduleSources.length, 1, `${pageName} module entry`);
-    assert.match(moduleSources[0], /\?v=\d+$/, `${pageName} cache version`);
+    assert.match(moduleSources[0], /\?v=[\w-]+$/, `${pageName} cache version`);
     const modulePath = moduleSources[0].split('?')[0];
     await access(new URL(`../${modulePath}`, import.meta.url));
   }
@@ -22,7 +22,7 @@ test('every page has unique element ids and valid local module entry points', as
 test('navigation connects every main learning page', async () => {
   for (const pageName of pageNames) {
     const html = await readFile(new URL(`../${pageName}`, import.meta.url), 'utf8');
-    for (const destination of ['index.html', 'courses.html', 'grammar.html', 'practice.html', 'speaking.html', 'progress.html']) {
+    for (const destination of ['index.html', 'courses.html', 'grammar.html', 'vocabulary.html', 'practice.html', 'speaking.html', 'listening.html', 'progress.html']) {
       assert.match(html, new RegExp(`href="${destination.replace('.', '\\.')}"`), `${pageName} -> ${destination}`);
     }
   }

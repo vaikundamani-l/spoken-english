@@ -6,7 +6,7 @@ SpeakSpring is a static, dependency-free web application. It uses native ES modu
 
 | Layer | Location | Responsibility |
 | --- | --- | --- |
-| Document | `index.html` | Semantic page structure and stable UI mounting points |
+| Document | `*.html` | Semantic page structure and stable UI mounting points |
 | Composition root | `src/app.js` | Creates dependencies and connects features |
 | Core | `src/core/` | Browser-facing services and persistence boundaries |
 | Data | `src/data/` | Immutable curriculum and quiz content |
@@ -37,6 +37,8 @@ SpeakSpring is a static, dependency-free web application. It uses native ES modu
 
 Create a focused folder under `src/features/`. Keep browser infrastructure in `src/core/`, content in `src/data/`, and dependency construction in `src/app.js`. New features should receive dependencies instead of importing global state.
 
+Standalone learning paths use a small page composition module under `src/pages/`, immutable curriculum data under `src/data/`, and shared browser services under `src/core/`. Their progress must be exposed through `ProgressRepository` and included in the dashboard total.
+
 ## Persistence compatibility
 
-The refactor preserves the existing local-storage keys. Learners keep their saved mini-lesson and CEFR course progress when the modular version is deployed.
+The refactor preserves the existing local-storage keys. Each learning path uses a versioned, namespaced key so learners keep their saved progress when new pages are deployed.
